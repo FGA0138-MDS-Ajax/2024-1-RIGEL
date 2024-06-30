@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Viagem</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key={{'AIzaSyBCrkOnN_VK1ya_FzAyrNl4Q1X9PO7Akb8'}}&libraries=places"></script>
+    <script>
+        var dataHoraAdded = false;
+        var clienteAdded = false;
+        var observacaoAdded = false;
+
+        function initMap() {
+            var directionsService = new google.maps.DirectionsService();
+            var directionsRenderer = new google.maps.DirectionsRenderer();
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -15.793889, lng: -47.882778}, // Brasília
+                zoom: 8
+            });
+            directionsRenderer.setMap(map);
+
+            var inputStart = document.getElementById('id_origem');
+            var inputEnd = document.getElementById('id_destino');
+            var autocompleteStart = new google.maps.places.Autocomplete(inputStart);
+            var autocompleteEnd = new google.maps.places.Autocomplete(inputEnd);
+
+            document.getElementById('add-waypoint').addEventListener('click', addWaypoint);
+            document.getElementById('add-data-hora').addEventListener('click', addDataHora);
+            document.getElementById('add-cliente').addEventListener('click', addCliente);
+            document.getElementById('add-observacao').addEventListener('click', addObservacao);
+            document.getElementById('calculate-route').addEventListener('click', function() {
+                calculateAndDisplayRoute(directionsService, directionsRenderer);
+            });
+        }
+
+        function addWaypoint() {
+            var waypointContainer = document.getElementById('waypoints');
+            var waypointDiv = document.createElement('div');
+            waypointDiv.className = 'form-group d-flex';
+
+            var waypointInput = document.createElement('input');
+            waypointInput.type = 'text';
+            waypointInput.className = 'form-control waypoint';
+            waypointDiv.appendChild(waypointInput);
+
+            var removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.className = 'btn btn-danger ml-2';
+            removeButton.innerText = 'Remover';
+            removeButton.addEventListener('click', function() {
+                waypointDiv.remove();
+            });
+            waypointDiv.appendChild(removeButton);
+
+            var autocomplete = new google.maps.places.Autocomplete(waypointInput);
+
+            waypointContainer.appendChild(waypointDiv);
+        }
+
+        function addDataHora() {
+            if (dataHoraAdded) {
+                // Se já houver uma data e hora adicionada, remova-a
+                document.getElementById('data-hora').innerHTML = '';
+                dataHoraAdded = false;
+            } else {
+                var dataHoraContainer = document.getElementById('data-hora');
+                var dataHoraDiv = document.createElement('div');
+                dataHoraDiv.className = 'form-group';
+
+                var dataHoraInput = document.createElement('input');
+                dataHoraInput.type = 'datetime-local';
+                dataHoraInput.className = 'form-control';
+                dataHoraDiv.appendChild(dataHoraInput);
+
+                dataHoraContainer.appendChild(dataHoraDiv);
+                dataHoraAdded = true;
+            }
+        }
+
+        function addCliente() {
+            if (clienteAdded) {
+                // Se já houver um cliente adicionado, remova-o
+                document.getElementById('cliente').innerHTML = '';
+                clienteAdded = false;
+            } else {
+                var clienteContainer = document.getElementById('cliente');
+                var clienteDiv = document.createElement('div');
+                clienteDiv.className = 'form-group';
+
+                var cpfInput = document.createElement('input');
+                cpfInput.type = 'text';
+                cpfInput.className = 'form-control';
+                cpfInput.placeholder = 'CPF';
+                clienteDiv.appendChild(cpfInput);
+
+                var numeroInput = document.createElement('input');
+                numeroInput.type = 'text';
+                numeroInput.className = 'form-control';
+                numeroInput.placeholder = 'Número';
+                clienteDiv.appendChild(numeroInput);
+
+                var nomeInput = document.createElement('input');
+                nomeInput.type = 'text';
+                nomeInput.className = 'form-control';
+                nomeInput.placeholder = 'Nome';
+                clienteDiv.appendChild(nomeInput);
+
+                var emailInput = document.createElement('input');
+                emailInput.type = 'email';
+                emailInput.className = 'form-control';
+                emailInput.placeholder = 'Email';
+                clienteDiv.appendChild(emailInput);
+
+                var fotoInput = document.createElement('input');
+                fotoInput.type = 'file';
+                fotoInput.className = 'form-control-file mt-2';
+                clienteDiv.appendChild(fotoInput);
+
+                var previewFoto = document.createElement('img');
+                previewFoto.id = 'preview-foto';
+                previewFoto.className = 'img-thumbnail mt-2';
+                clienteDiv.appendChild(previewFoto);
+
+                fotoInput.addEventListener('change', function(event) {
+                    var file = event.target.files[0];
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        previewFoto.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                });
+
+                clienteContainer.appendChild(clienteDiv);
+                clienteAdded = true;
+            }
+        }
+
+        function addObservacao() {
+            if (observacaoAdded) {
+                // Se já houver uma observação adicionada, remova-a
+                document.getElementById('observacao').innerHTML = '';
+                observacaoAdded = false;
+            } else {
+                var observacaoContainer = document.getElementById('observacao');
+                var observacaoDiv = document.createElement('div');
+                observacaoDiv.className = 'form-group';
+
+                var observacaoLabel = document.createElement('label');
+                observacaoLabel.textContent = 'Observação';
+                observacaoDiv.appendChild(observacaoLabel);
+
+                var observacaoInput = document.createElement('textarea');
+                observacaoInput.className = 'form-control';
+                observacaoInput.name = 'observacao';
+                observacaoDiv.appendChild(observacaoInput);
+
+                observacaoContainer.appendChild(observacaoDiv);
+                observacaoAdded = true;
+            }
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+            var start = document.getElementById('id_origem').value;
+            var end = document.getElementById('id_destino').value;
+            var ratePerKm = 2.50;  // Taxa fixa por km
+
+            var waypoints = [];
+            var waypointInputs = document.getElementsByClassName('waypoint');
+            for (var i = 0; i < waypointInputs.length; i++) {
+                if (waypointInputs[i].value !== '') {
+                    waypoints.push({
+                        location: waypointInputs[i].value,
+                        stopover: true
+                    });
+                }
+            }
+
+            directionsService.route(
+                {
+                    origin: start,
+                    destination: end,
+                    waypoints: waypoints,
+                    travelMode: 'DRIVING'
+                },
+                function(response, status) {
+                    if (status === 'OK') {
+                        directionsRenderer.setDirections(response);
+                        var route = response.routes[0].legs;
+                        var totalDistance = 0;
+                        var totalDuration = 0;
+
+                        for (var i = 0; i < route.length; i++) {
+                            totalDistance += route[i].distance.value;
+                            totalDuration += route[i].duration.value;
+                        }
+                        
+                        var distanceKm = totalDistance / 1000;
+                        var cost = distanceKm * ratePerKm;
+                        var duration = new Date(totalDuration * 1000).toISOString().substr(11, 8);
+
+                        document.getElementById('duration').innerText = 'Duração: ' + duration;
+                        document.getElementById('distance').innerText = 'Distância: ' + distanceKm.toFixed(2) + ' km';
+                        document.getElementById('cost').innerText = 'Custo: R$' + cost.toFixed(2);
+
+                        // Adicionar dados ao formulário oculto para submissão
+                        document.getElementById('id_distance').value = distanceKm.toFixed(2);
+                        document.getElementById('id_duration').value = totalDuration;
+                        document.getElementById('id_cost').value = cost.toFixed(2);
+                    } else {
+                        window.alert('A solicitação de direções falhou devido a ' + status);
+                    }
+                }
+            );
+        }
+    </script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        #preview-foto {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body onload="initMap()">
+    <div class="container">
+        <h1 class="mt-5">Formulário de Viagem</h1>
+        
+        <!-- Exibição de mensagens de Django -->
+        {% if messages %}
+            <div class="alert alert-success">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <form method="post" action="{% url 'maps:criar_viagem' %}" class="mt-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_origem">Ponto de Partida</label>
+                <input type="text" id="id_origem" name="origem" class="form-control">
+            </div>
+            <div id="waypoints"></div>
+            <button type="button" id="add-waypoint" class="btn btn-secondary mb-3">Adicionar Ponto de Parada</button>
+            <div class="form-group">
+                <label for="id_destino">Destino</label>
+                <input type="text" id="id_destino" name="destino" class="form-control">
+            </div>
+            <div id="data-hora"></div>
+            <button type="button" id="add-data-hora" class="btn btn-secondary mb-3">Adicionar Data e Hora</button>
+            <div id="cliente"></div>
+            <button type="button" id="add-cliente" class="btn btn-secondary mb-3">Adicionar Cliente</button>
+            <div id="observacao"></div>
+            <button type="button" id="add-observacao" class="btn btn-secondary mb-3">Adicionar Observação</button>
+            <input type="hidden" id="id_distance" name="distance">
+            <input type="hidden" id="id_duration" name="duration">
+            <input type="hidden" id="id_cost" name="cost">
+            <button type="button" id="calculate-route" class="btn btn-primary">Calcular Rota</button>
+            <button type="submit" class="btn btn-success">Salvar Viagem</button>
+        </form>
+
+        <div id="results" class="mt-4">
+            <p id="duration" class="lead">Duração: </p>
+            <p id="distance" class="lead">Distância: </p>
+            <p id="cost" class="lead">Custo: </p>
+        </div>
+
+        <div id="map" class="mt-4"></div>
+    </div>
+
+    <script>
+        function addWaypoint() {
+            var waypointContainer = document.getElementById('waypoints');
+            var waypointDiv = document.createElement('div');
+            waypointDiv.className = 'form-group d-flex';
+
+            var waypointInput = document.createElement('input');
+            waypointInput.type = 'text';
+            waypointInput.className = 'form-control waypoint';
+            waypointDiv.appendChild(waypointInput);
+
+            var removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.className = 'btn btn-danger ml-2';
+            removeButton.innerText = 'Remover';
+            removeButton.addEventListener('click', function() {
+                waypointDiv.remove();
+            });
+            waypointDiv.appendChild(removeButton);
+
+            var autocomplete = new google.maps.places.Autocomplete(waypointInput);
+
+            waypointContainer.appendChild(waypointDiv);
+        }
+
+        function addDataHora() {
+            var dataHoraContainer = document.getElementById('data-hora');
+            var dataHoraDiv = document.createElement('div');
+            dataHoraDiv.className = 'form-group';
+
+            var dataHoraInput = document.createElement('input');
+            dataHoraInput.type = 'datetime-local';
+            dataHoraInput.className = 'form-control';
+            dataHoraDiv.appendChild(dataHoraInput);
+
+            dataHoraContainer.appendChild(dataHoraDiv);
+        }
+
+        function addCliente() {
+            var clienteContainer = document.getElementById('cliente');
+            var clienteDiv = document.createElement('div');
+            clienteDiv.className = 'form-group';
+
+            var cpfInput = document.createElement('input');
+            cpfInput.type = 'text';
+            cpfInput.className = 'form-control';
+            cpfInput.placeholder = 'CPF';
+            clienteDiv.appendChild(cpfInput);
+
+            var numeroInput = document.createElement('input');
+            numeroInput.type = 'text';
+            numeroInput.className = 'form-control';
+            numeroInput.placeholder = 'Número';
+            clienteDiv.appendChild(numeroInput);
+
+            var nomeInput = document.createElement('input');
+            nomeInput.type = 'text';
+            nomeInput.className = 'form-control';
+            nomeInput.placeholder = 'Nome';
+            clienteDiv.appendChild(nomeInput);
+
+            var emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.className = 'form-control';
+            emailInput.placeholder = 'Email';
+            clienteDiv.appendChild(emailInput);
+
+            var fotoInput = document.createElement('input');
+            fotoInput.type = 'file';
+            fotoInput.className = 'form-control-file mt-2';
+            clienteDiv.appendChild(fotoInput);
+
+            var previewFoto = document.createElement('img');
+            previewFoto.id = 'preview-foto';
+            previewFoto.className = 'img-thumbnail mt-2';
+            clienteDiv.appendChild(previewFoto);
+
+            fotoInput.addEventListener('change', function(event) {
+                var file = event.target.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    previewFoto.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            });
+
+            clienteContainer.appendChild(clienteDiv);
+        }
+
+        function addObservacao() {
+            var observacaoContainer = document.getElementById('observacao');
+            var observacaoDiv = document.createElement('div');
+            observacaoDiv.className = 'form-group';
+
+            var observacaoLabel = document.createElement('label');
+            observacaoLabel.textContent = 'Observação';
+            observacaoDiv.appendChild(observacaoLabel);
+
+            var observacaoInput = document.createElement('textarea');
+            observacaoInput.className = 'form-control';
+            observacaoInput.name = 'observacao';
+            observacaoDiv.appendChild(observacaoInput);
+
+            observacaoContainer.appendChild(observacaoDiv);
+        }
+    </script>
+</body>
+</html>
+

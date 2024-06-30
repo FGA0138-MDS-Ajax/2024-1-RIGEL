@@ -1,4 +1,5 @@
-version: '3.9'
+#version: '3.9'
+#ALERTA: docker-compose.yml: `version` is obsolete"
 
 services:
   driverplan:
