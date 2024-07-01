@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrigel_page=self.webpackChunkrigel_page||[]).push([[903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/2024-1-RIGEL/en/blog","blogTitle":"Blog"}')}}]);
