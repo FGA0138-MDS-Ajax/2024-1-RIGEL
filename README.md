@@ -156,6 +156,14 @@ git clone https://github.com/FGA0138-MDS-Ajax/2024-1-RIGEL.git
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/leticiakrpaiva">
+        <img src="https://avatars.githubusercontent.com/u/114038884?v=4" width="100px;" alt="Foto de Leticia Paiva"/><br>
+        <sub>
+          <b>Leticia Paiva</b>
+        </sub>
+      </a>
+    </td>
   </tr>
 </table>
 
