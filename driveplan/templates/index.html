@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrivePlan - Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #3485FF;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/logo_driveplan.png' %}" alt="DrivePlan Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'controle:login' %}">
+                            <button id="btn-login" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="bi bi-box-arrow-in-right"></i> Login
+                            </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'controle:register' %}">
+                            <button id="btn-register" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                <i class="bi bi-person-plus"></i> Cadastro
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="text-white text-center py-5" style="background-color: #3485FF;">
+        <div class="container p-5 rounded shadow">
+            <img src="{% static 'images/logo_driveplan.png' %}" alt="DrivePlan Logo" height="100" class="mb-4">
+            <p class="lead">Bem-vindo ao DrivePlan - Seu parceiro de viagem confiável</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Sobre o DrivePlan -->
+        <section class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <h2>Sobre o DrivePlan</h2>
+                    <p>O DrivePlan oferece uma plataforma confiável e segura para gerenciar suas viagens. Seja você um cliente procurando serviços de transporte ou um motorista oferecendo seus serviços, temos as ferramentas para facilitar sua jornada.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'images/image2.jpg' %}" alt="Imagem de exemplo" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2>Funcionalidades e Benefícios</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <i class="bi bi-gear-fill icon-feature"></i>
+                    <h4>Gestão de atendimentos</h4>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-calculator-fill icon-feature"></i>
+                    <h4>Cálculo automático de tarifas</h4>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-shield-lock-fill icon-feature"></i>
+                    <h4>Segurança dos dados</h4>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-geo-alt-fill icon-feature"></i>
+                    <h4>Suporte a geolocalização</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{% static 'images/image1.jpg' %}" alt="Imagem de exemplo" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h2>Entre em contato</h2>
+                    <p>Se você tiver alguma dúvida ou precisar de assistência, nossa equipe de suporte está pronta para ajudar. Entre em contato conosco através de nosso formulário de contato ou das redes sociais.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4" style="background-color: #f8f9fa;">
+        <div class="container">
+            <p class="mb-0">DrivePlan &copy; 2024. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnToggleLogin = document.getElementById('toggle-login');
+            const formCliente = document.getElementById('form-cliente');
+            const formMotorista = document.getElementById('form-motorista');
+
+            btnToggleLogin.addEventListener('click', function() {
+                if (formCliente.classList.contains('active')) {
+                    formCliente.classList.remove('active');
+                    formCliente.classList.add('inactive');
+                    formMotorista.classList.remove('inactive');
+                    formMotorista.classList.add('active');
+                    btnToggleLogin.textContent = 'Switch to Cliente';
+                } else {
+                    formCliente.classList.remove('inactive');
+                    formCliente.classList.add('active');
+                    formMotorista.classList.remove('active');
+                    formMotorista.classList.add('inactive');
+                    btnToggleLogin.textContent = 'Switch to Motorista';
+                }
+            });
+
+            formCliente.classList.add('active');
+            formMotorista.classList.add('inactive');
+
+            const registerForm = document.getElementById('registerModal').querySelector('form');
+            registerForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const phone = document.getElementById('register-phone').value;
+                const cpfCnpj = document.getElementById('register-cpf-cnpj').value;
+                const password = document.getElementById('register-password').value;
+                const state = document.getElementById('register-state').value;
+                const role = document.getElementById('register-role').value;
+
+                console.log("Registrado:", { name, email, phone, cpfCnpj, password, state, role });
+
+                registerForm.reset();
+                bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
+            });
+        });
+    </script>
+</body>
+</html>

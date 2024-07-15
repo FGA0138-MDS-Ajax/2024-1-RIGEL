@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="text-white text-center py-5" style="background-color: #3485FF;">
+            <div class="container p-5 rounded shadow">
+                <img src="{% static 'images/logo_driveplan.png' %}" alt="DrivePlan Logo" height="100" class="mb-4">
+                <h2 class="mb-3">Register</h2>
+            </div>
+        </header>
+
+        <main class="container">
+            <form method="post" class="register-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username">email:</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password1">Senha:</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password2">Confirma Senha:</label>
+                    {{ form.password2 }}
+                </div>
+                <div class="form-group">
+                    <label for="id_nome">Nome:</label>
+                    {{ form.nome }}
+                </div>
+                <div class="form-group">
+                    <label for="id_cpf">CPF:</label>
+                    {{ form.cpf }}
+                </div>
+                <div class="form-group">
+                    <label for="id_data_nascimento">Data de Nascimento:</label>
+                    {{ form.data_nascimento }}
+                </div>
+                <div class="form-group">
+                    <label for="id_sexo">Sexo:</label>
+                    {{ form.sexo }}
+                </div>
+                <div class="form-group">
+                    <label for="id_whatsapp">WhatsApp:</label>
+                    {{ form.whatsapp }}
+                </div>
+                <div class="form-group">
+                    <label for="id_nr_cnh">Número da CNH:</label>
+                    {{ form.nr_cnh }}
+                </div>
+                <div class="form-group">
+                    <label for="id_cep_motorista">CEP do Motorista:</label>
+                    {{ form.cep_motorista }}
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Cadastra</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>

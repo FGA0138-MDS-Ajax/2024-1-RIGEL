@@ -1,0 +1,89 @@
+{% extends 'home_base.html' %}
+
+{% block title %}Calendário{% endblock %}
+
+{% block content %}
+    <div id="calendario" class="content-section active">
+        <h2>Calendário</h2>
+        <div id="calendar"></div>
+    </div>
+
+    <div class="modal fade" id="viagemUnicaModal" tabindex="-1" aria-labelledby="viagemUnicaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viagemUnicaModalLabel">Detalhes da Viagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Cliente:</strong> <span id="modalCliente"></span></p>
+                    <p><strong>Data de Embarque:</strong> <span id="modalDataEmbarque"></span></p>
+                    <p><strong>Hora de Embarque:</strong> <span id="modalHoraEmbarque"></span></p>
+                    <p><strong>CEP de Embarque:</strong> <span id="modalCepEmbarque"></span></p>
+                    <p><strong>Data de Desembarque Estimado:</strong> <span id="modalDataDesembarqueEstimado"></span></p>
+                    <p><strong>Hora de Desembarque Estimado:</strong> <span id="modalHoraDesembarqueEstimado"></span></p>
+                    <p><strong>CEP de Desembarque:</strong> <span id="modalCepDesembarque"></span></p>
+                    <p><strong>Valor da Viagem:</strong> <span id="modalValorViagem"></span></p>
+                    <p><strong>Observação:</strong> <span id="modalObservacao"></span></p>
+                    <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: '{% url "controle:events" %}',
+            eventClick: function(info) {
+                $('#modalCliente').text(info.event.extendedProps.cliente);
+                $('#modalDataEmbarque').text(info.event.extendedProps.data_embarque);
+                $('#modalHoraEmbarque').text(info.event.extendedProps.hora_embarque);
+                $('#modalCepEmbarque').text(info.event.extendedProps.cep_embarque);
+                $('#modalDataDesembarqueEstimado').text(info.event.extendedProps.data_desembarque_estimado);
+                $('#modalHoraDesembarqueEstimado').text(info.event.extendedProps.hora_desembarque_estimado);
+                $('#modalCepDesembarque').text(info.event.extendedProps.cep_desembarque);
+                $('#modalValorViagem').text(info.event.extendedProps.valor_viagem);
+                $('#modalObservacao').text(info.event.extendedProps.observacao);
+                $('#modalStatus').text(info.event.extendedProps.status);
+
+                var eventId = info.event.id;
+                $('#btnExcluirViagem').click(function() {
+                    var eventId = info.event.id;
+                    $.ajax({
+                        url: '{% url "controle:excluir_evento" %}',
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        data: {
+                            'id_viagem_unica': eventId,
+                            '_method': 'DELETE'
+                        },
+                        success: function(response) {
+                            calendar.refetchEvents();
+                            $('#viagemUnicaModal').modal('hide');
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Erro ao excluir viagem:', error);
+                        }
+                    });
+                });
+                
+                $('#viagemUnicaModal').modal('show');
+            }
+        });
+        calendar.render();
+    });
+</script>
+{% endblock %}

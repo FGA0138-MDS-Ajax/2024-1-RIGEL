@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Viagem Única</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos adicionais para personalização */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding-top: 3rem;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Formulario Para Viagem</h2>
+        <form method="post" id="viagem-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Campos para mostrar distância e valor -->
+            <div class="form-group">
+                <label for="distancia">Distância Percorrida (km)</label>
+                <input type="text" id="distancia" name="distancia" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="valor_viagem_display">Valor da Viagem</label>
+                <input type="text" id="valor_viagem_display" class="form-control" readonly>
+            </div>
+
+            <!-- Campo oculto para valor_viagem -->
+            <input type="hidden" id="valor_viagem" name="valor_viagem">
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+
+    <!-- Scripts opcionais para funcionalidades adicionais -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCrkOnN_VK1ya_FzAyrNl4Q1X9PO7Akb8&libraries=places"></script>
+
+    <script>
+        // Função para inicializar Google Maps Autocomplete
+        function initializeAutocomplete() {
+            var options = {
+                componentRestrictions: { country: 'BR' }
+            };
+            var autocompleteEmbarque = new google.maps.places.Autocomplete(document.getElementById('id_cep_embarque'), options);
+            var autocompleteDesembarque = new google.maps.places.Autocomplete(document.getElementById('id_cep_desembarque'), options);
+        }
+
+        // Função para calcular distância usando Google Maps Distance Matrix API
+        function calcularDistancia(cepEmbarque, cepDesembarque, callback) {
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix({
+                origins: [cepEmbarque],
+                destinations: [cepDesembarque],
+                travelMode: 'DRIVING',
+                unitSystem: google.maps.UnitSystem.METRIC,
+            }, function(response, status) {
+                if (status === 'OK') {
+                    var distancia = response.rows[0].elements[0].distance.value / 1000; // Converter metros para km
+                    callback(distancia);
+                } else {
+                    alert('Erro ao calcular a distância: ' + status);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            initializeAutocomplete();
+
+            // Função para calcular valor da viagem
+            function calcularValorViagem(distancia) {
+                return distancia * 2.0; // Exemplo: R$2.00 por km
+            }
+
+            // Função para calcular taxa e valor da viagem
+            function calcularTaxaEValor() {
+                var cepEmbarque = $('#id_cep_embarque').val();
+                var cepDesembarque = $('#id_cep_desembarque').val();
+
+                if (cepEmbarque && cepDesembarque) {
+                    calcularDistancia(cepEmbarque, cepDesembarque, function(distancia) {
+                        var valorViagem = calcularValorViagem(distancia);
+
+                        $('#distancia').val(distancia.toFixed(2));
+                        $('#valor_viagem_display').val(valorViagem.toFixed(2));
+                        $('#valor_viagem').val(valorViagem.toFixed(2)); // Preenchendo o campo oculto
+                    });
+                }
+            }
+
+            $('#id_cep_embarque, #id_cep_desembarque').change(function() {
+                calcularTaxaEValor();
+            });
+
+            $('#viagem-form').submit(function(event) {
+                var cepEmbarque = $('#id_cep_embarque').val();
+                var cepDesembarque = $('#id_cep_desembarque').val();
+                var valorViagem = $('#valor_viagem').val();
+
+                if (!cepEmbarque || !cepDesembarque) {
+                    alert('Por favor, preencha os campos de CEP de Embarque e Desembarque.');
+                    event.preventDefault();
+                } else if (!valorViagem) {
+                    alert('O valor da viagem não foi calculado. Por favor, verifique os CEPs e tente novamente.');
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

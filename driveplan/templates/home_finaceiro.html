@@ -1,0 +1,121 @@
+{% extends 'home_base.html' %}
+
+{% block title %}Ganhos dos Motoristas{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-4 mb-4">Ganhos dos Motoristas</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2 class="card-title">Viagens Pagas</h2>
+            <p class="card-text">Total Pago: <span class="text-success">R$ {{ total_pago }}</span></p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {% for viagem in viagens_pagas %}
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary mb-3"><span class="text-dark">{{ viagem.cliente_fk }}</span></h5>
+                            <p class="card-text">Valor: <span class="text-info">R$ {{ viagem.valor_viagem }}</span></p>
+                            <p class="card-text">Status: {{ viagem.get_status_display }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                    <p class="col-md-12 text-muted">Nenhuma viagem paga encontrada.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2 class="card-title">Viagens Não Pagas</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {% for viagem in viagens_nao_pagas %}
+                <div class="col-md-4 mb-4">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary mb-3"><span class="text-dark">{{ viagem.cliente_fk }}</span></h5>
+                            <p class="card-text">Valor: <span class="text-info">R$ {{ viagem.valor_viagem }}</span></p>
+                            <p class="card-text">Status: {{ viagem.get_status_display }}</p>
+                            <!-- Botão para marcar como pago -->
+                            <form action="{% url 'controle:alterar_status_pagamento' viagem.id_viagem_unica %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-success">Marcar como Pago</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                    <p class="col-md-12 text-muted">Nenhuma viagem não paga encontrada.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+<style>
+    .card {
+        border: none;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .text-success {
+        font-weight: 600;
+        color: #28a745;
+    }
+
+    .text-info {
+        font-weight: 600;
+        color: #17a2b8;
+    }
+
+    .text-primary {
+        font-weight: 600;
+        color: #007bff;
+    }
+
+    .text-muted {
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .mt-4 {
+        margin-top: 1.5rem !important;
+    }
+
+    .text-dark {
+        font-weight: 600;
+        color: #343a40; /* Cor escura para destacar o nome do cliente */
+    }
+</style>
+{% endblock %}

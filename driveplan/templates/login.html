@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="text-white text-center py-5" style="background-color: #3485FF;">
+      <div class="container p-5 rounded shadow">
+        <img src="{% static 'images/logo_driveplan.png' %}" alt="DrivePlan Logo" height="80" class="mb-4">
+        <h2 class="mb-3">Faça Login na Sua Conta (Sign in to your account)</h2>
+      </div>
+    </header>
+
+    <main class="container">
+      {% if messages %}
+        <div class="alert alert-danger">
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div id="form-motorista" class="form-container inactive">
+        <form method="post" action="{% url 'controle:login' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" name="username" placeholder="Email" required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" class="form-control" name="password" placeholder="Senha" required>
+            </div>
+           
+            <a href="#">Forgot password?</a>
+            <button type="submit" class="btn btn-primary w-100">Entrar (Sign in)</button>
+          </div>
+        </form>
+        <div class="text-center mb-3">
+          <a href="{%url 'controle:register'%}">você não tem conta? Junte-se</a>
+        </div>
+      </div>
+    </main>
+  </div>
+

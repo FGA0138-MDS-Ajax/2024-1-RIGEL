@@ -1,0 +1,138 @@
+{% extends 'home_base.html' %}
+
+{% block title %}Cronograma{% endblock %}
+
+{% block content %}
+<h2>Cronograma</h2>
+
+<div class="btn-group mt-3" role="group" aria-label="Filtros de Cronograma">
+    <button type="button" class="btn btn-primary" id="btn-dia">Dia</button>
+    <button type="button" class="btn btn-primary" id="btn-semana">Semana</button>
+    <button type="button" class="btn btn-primary" id="btn-mes">Mês</button>
+</div>
+
+<div id="cronograma" class="content-section active">
+    <h2 class="text-center mt-4 mb-4">Cronograma de Viagens</h2>
+    <ul id="cronogramaList" class="list-group">
+        <!-- Cronograma será adicionado aqui pelo JavaScript -->
+    </ul>
+</div>
+
+<!-- Modal para exibir detalhes da viagem -->
+<div class="modal fade" id="viagemUnicaModal" tabindex="-1" aria-labelledby="viagemUnicaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viagemUnicaModalLabel">Detalhes da Viagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Detalhes da viagem serão adicionados aqui pelo JavaScript -->
+                <p><strong>Cliente:</strong> <span id="modalCliente"></span></p>
+                <p><strong>Data de Embarque:</strong> <span id="modalDataEmbarque"></span></p>
+                <p><strong>Hora de Embarque:</strong> <span id="modalHoraEmbarque"></span></p>
+                <p><strong>CEP de Embarque:</strong> <span id="modalCepEmbarque"></span></p>
+                <p><strong>Data de Desembarque Estimado:</strong> <span id="modalDataDesembarqueEstimado"></span></p>
+                <p><strong>Hora de Desembarque Estimado:</strong> <span id="modalHoraDesembarqueEstimado"></span></p>
+                <p><strong>CEP de Desembarque:</strong> <span id="modalCepDesembarque"></span></p>
+                <p><strong>Valor da Viagem:</strong> <span id="modalValorViagem"></span></p>
+                <p><strong>Observação:</strong> <span id="modalObservacao"></span></p>
+                <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        loadCronograma('dia');
+
+        document.getElementById('btn-dia').addEventListener('click', function() {
+            loadCronograma('dia');
+        });
+
+        document.getElementById('btn-semana').addEventListener('click', function() {
+            loadCronograma('semana');
+        });
+
+        document.getElementById('btn-mes').addEventListener('click', function() {
+            loadCronograma('mes');
+        });
+
+        function loadCronograma(filtro) {
+            $.ajax({
+                url: '{% url "controle:cronograma" %}',
+                method: 'GET',
+                data: { filtro: filtro },
+                success: function(data) {
+                    $('#cronogramaList').empty();
+                    if (data.length === 0) {
+                        $('#cronogramaList').append('<li class="list-group-item text-center">Nenhuma viagem encontrada</li>');
+                    } else {
+                        data.forEach(function(viagem) {
+                            $('#cronogramaList').append(`
+                                <li class="list-group-item cronograma-item">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <strong>Cliente:</strong> ${viagem.cliente} <br>
+                                            <strong>Valor da Viagem:</strong> ${viagem.valor_viagem} <br>
+                                            <strong>Status:</strong> ${viagem.status}
+                                        </div>
+                                        <div class="col-md-3">
+                                            <strong>Data de Embarque:</strong> ${viagem.data_embarque} <br>
+                                            <strong>Hora de Embarque:</strong> ${viagem.hora_embarque} <br>
+                                            <strong>CEP de Embarque:</strong> ${viagem.cep_embarque}
+                                        </div>
+                                        <div class="col-md-3">
+                                            <strong>Data de Desembarque Estimado:</strong> ${viagem.data_desembarque_estimado} <br>
+                                            <strong>Hora de Desembarque Estimado:</strong> ${viagem.hora_desembarque_estimado} <br>
+                                            <strong>CEP de Desembarque:</strong> ${viagem.cep_desembarque}
+                                        </div>
+                                        <div class="col-md-3">
+                                            <strong>Observação:</strong> ${viagem.observacao}
+                                        </div>
+                                    </div>
+                                </li>
+                            `);
+                        });
+                    }
+                }
+            });
+        }
+    });
+</script>
+<style>
+    .cronograma-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .cronograma-item:hover {
+        transform: translateY(-2px);
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .cronograma-item .col-md-3 {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .cronograma-item strong {
+        font-weight: 600;
+        color: #333;
+    }
+</style>
+{% endblock %}
