@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrigel_ghpages=self.webpackChunkrigel_ghpages||[]).push([[858],{5516:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"default"}')}}]);

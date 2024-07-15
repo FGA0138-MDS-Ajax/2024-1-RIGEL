@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrigel_ghpages=self.webpackChunkrigel_ghpages||[]).push([[903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/2024-1-RIGEL/blog","blogTitle":"Blog"}')}}]);
