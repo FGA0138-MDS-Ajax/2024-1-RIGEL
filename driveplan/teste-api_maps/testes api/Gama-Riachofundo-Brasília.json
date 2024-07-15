@@ -1,0 +1,1373 @@
+{
+   "geocoded_waypoints" : 
+   [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJI0m4cDXUW5MRc_tKsHj1GDE",
+         "types" : 
+         [
+            "administrative_area_level_4",
+            "political"
+         ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJ66KzDc0tWpMRrKXu5zqbulA",
+         "types" : 
+         [
+            "political",
+            "sublocality",
+            "sublocality_level_2"
+         ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJdeKa3xg9WpMRJEp1aeRwhHM",
+         "types" : 
+         [
+            "locality",
+            "political"
+         ]
+      }
+   ],
+   "routes" : 
+   [
+      {
+         "bounds" : 
+         {
+            "northeast" : 
+            {
+               "lat" : -15.7946528,
+               "lng" : -47.8823783
+            },
+            "southwest" : 
+            {
+               "lat" : -16.0130683,
+               "lng" : -48.0679576
+            }
+         },
+         "copyrights" : "Map data ©2024",
+         "legs" : 
+         [
+            {
+               "distance" : 
+               {
+                  "text" : "23.4 km",
+                  "value" : 23397
+               },
+               "duration" : 
+               {
+                  "text" : "27 mins",
+                  "value" : 1625
+               },
+               "end_address" : "Riacho Fundo I, Brasília - DF, Brazil",
+               "end_location" : 
+               {
+                  "lat" : -15.8833021,
+                  "lng" : -48.017552
+               },
+               "start_address" : "Gama, Brasilia - Federal District, Brazil",
+               "start_location" : 
+               {
+                  "lat" : -16.0130683,
+                  "lng" : -48.0679576
+               },
+               "steps" : 
+               [
+                  {
+                     "distance" : 
+                     {
+                        "text" : "12 m",
+                        "value" : 12
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 2
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.0129711,
+                        "lng" : -48.0679198
+                     },
+                     "html_instructions" : "Head \u003cb\u003enorth\u003c/b\u003e toward \u003cb\u003eSce Ae Oeste Q 1 Conjunto H\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "tpv`BvgkdHECA?EAEA"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0130683,
+                        "lng" : -48.0679576
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 248
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 30
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.0119256,
+                        "lng" : -48.06588199999999
+                     },
+                     "html_instructions" : "Exit the roundabout onto \u003cb\u003eSce Ae Oeste Q 1 Conjunto H\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "`pv`BngkdHAACCCCCECCCCAECEACAGEIEIGQo@gBQe@a@aAw@qB"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0129711,
+                        "lng" : -48.0679198
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 173
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 16
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.0112077,
+                        "lng" : -48.0644448
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eSce Ae Oeste Q 1 Conjunto I\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "piv`BvzjdHoA}C_AaC"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0119256,
+                        "lng" : -48.06588199999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "53 m",
+                        "value" : 53
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 5
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.0109733,
+                        "lng" : -48.0640091
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eSce Ae Oeste Q 1 Cl\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "`ev`BvqjdHUg@Ym@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0112077,
+                        "lng" : -48.0644448
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.1 km",
+                        "value" : 148
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 13
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.0103553,
+                        "lng" : -48.0627787
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eSce Q 1 Conjunto A\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "pcv`B`ojdHEMEKm@wAMYAEc@iAKY"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0109733,
+                        "lng" : -48.0640091
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 164
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 15
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.0096665,
+                        "lng" : -48.06142269999999
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eSce Q 1 Conjunto B\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "v_v`BjgjdHCGISGOa@_AUm@ISO_@Q_@Oa@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0103553,
+                        "lng" : -48.0627787
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 185
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 31
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -16.008881,
+                        "lng" : -48.0598952
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eSce EQ1/\u003cwbr/\u003e2\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "l{u`Bz~idHEICGe@oAg@mAMe@_@u@Wc@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.0096665,
+                        "lng" : -48.06142269999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "1.1 km",
+                        "value" : 1108
+                     },
+                     "duration" : 
+                     {
+                        "text" : "2 mins",
+                        "value" : 99
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.9990119,
+                        "lng" : -48.0590695
+                     },
+                     "html_instructions" : "\u003cb\u003eSce EQ1/\u003cwbr/\u003e2\u003c/b\u003e turns \u003cb\u003eleft\u003c/b\u003e and becomes \u003cb\u003eSno St. Leste Industrial\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "nvu`BjuidHk@[O?K?g@AkDG_@AmACiGKcIOaACsKQeFKcAAs@AW?KAWEWESIMEQIa@O"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -16.008881,
+                        "lng" : -48.0598952
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "5.2 km",
+                        "value" : 5211
+                     },
+                     "duration" : 
+                     {
+                        "text" : "5 mins",
+                        "value" : 303
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.9681778,
+                        "lng" : -48.02276850000001
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eDF-480\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "xxs`BdpidHyA}@CAy@c@q@c@WMWQWOAAGEEEEEEEEEEGEECGEGEIWm@Wy@KWSo@Wq@_@aAeDaJa@eAAEUi@Y}@c@gAgAwB]a@[i@i@{@EGEEUYEGGIMSW]a@m@]o@QYg@{@]i@OSGIy@eAu@{@MOIKWYKOi@k@SUQOa@c@CCSWkCwCm@g@MMKIWS]Yi@]i@_@WYw@{@cAkAY]k@o@qCeDGIOQGIg@k@Y[a@i@gAsA{IeKgEwE{AeByG}HoDaE_FwFeLwMoAyAW[Y[_BkBGGIKsDgEo@u@q@w@wI}JGI{@eAqGqHyFwG}CmDgGiH}@cA{@aA"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.9990119,
+                        "lng" : -48.0590695
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 215
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 12
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.9675053,
+                        "lng" : -48.0209021
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eSanta Maria\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eValparaíso\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eLuziânia\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : 
+                     {
+                        "points" : "bxm`BhmbdHIYMUIQGKIQ?AISM[ESGOEQCKEWKo@Ec@Iu@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.9681778,
+                        "lng" : -48.02276850000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 224
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 14
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.9662576,
+                        "lng" : -48.0194766
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eBrasília\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "|sm`BrabdHIi@E[?AEWEKEOEOAAISGKEIQQ][QKGEECUIEAOESEQCUC"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.9675053,
+                        "lng" : -48.0209021
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "7.9 km",
+                        "value" : 7865
+                     },
+                     "duration" : 
+                     {
+                        "text" : "9 mins",
+                        "value" : 543
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.9053056,
+                        "lng" : -48.0528893
+                     },
+                     "html_instructions" : "Merge onto \u003cb\u003eBR-251\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eDF-001\u003c/b\u003e via the ramp to \u003cb\u003eBR-060\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eTaguatinga\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "blm`BvxadHYAc@CK?M@UBK@MBMDQFGBWNEBSPGDEFMNGHGJEJEJCHA@CHCLERANEd@?HA~@CVARCNCLALEHCJCFEDABMTKPSTy@x@KVaBrAe@^SPQNUPsAdAg@`@MJyExDq@h@eAz@}@r@gDjCc@^cCnBKHKJ{D~Cc@\\KHeAz@GFGDA@CBq@h@s@j@UPk@d@{ExDoGdFoB|AYVYT}EzDqB`BYTkA~@kBzAmB|AeBtAmCvBcAx@oEpDc@\\CBMJ_@Xg@`@m@b@KF[T]V}@l@eAr@SNg@\\eAn@YPEBu@b@kBjA]PQJsAp@i@Ze@TcAd@_Ab@aCfAoChAgBp@_A\\_@Lq@Vy@ViA^{Ab@yAb@aDv@eBb@gB^aATc@Hk@LUDaATcB\\eB^oCl@KB}Bf@a@HA@[FSFmFnAiCj@QDeDr@mAXc@H{A\\sAXwBf@E@G@yA\\{AZkCl@mCl@kAVm@L_Dp@y@ReATE@G@wAZuAX_@J_APcGtAm@LYFqCn@gATiB`@E@k@Lk@Lo@NwAZC@u@NUFUFyBd@_@HoFlASD[FYH_IbBgB`@u@Ps@PaB\\gDt@{A\\mATOD]H[Hu@PkAVe@J[Fs@NE@q@PKBa@H{@RiAT_B\\a@J"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.9662576,
+                        "lng" : -48.0194766
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "2.4 km",
+                        "value" : 2385
+                     },
+                     "duration" : 
+                     {
+                        "text" : "2 mins",
+                        "value" : 130
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8848117,
+                        "lng" : -48.0594609
+                     },
+                     "html_instructions" : "Keep \u003cb\u003eleft\u003c/b\u003e to continue on \u003cb\u003eBR-251\u003c/b\u003e",
+                     "maneuver" : "keep-left",
+                     "polyline" : 
+                     {
+                        "points" : "doa`BpihdHkCh@yFlAI@mJnBm@Lo@Ly@R{@RgB`@mDx@mFnA_E~@sH~AkAVA@e@Ns@NaDr@}@T{@Po@Ly@Ny@RoAXWFm@L}@PC@_B^aCj@cATa@Hs@NmAVkDv@cB^cCf@sAZy@PeB\\gDz@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.9053056,
+                        "lng" : -48.0528893
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.7 km",
+                        "value" : 657
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 39
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8809653,
+                        "lng" : -48.0553926
+                     },
+                     "html_instructions" : "Slight \u003cb\u003eright\u003c/b\u003e onto the ramp to \u003cb\u003eTaguatinga\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eN. Bandeirante\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eBrasília\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : 
+                     {
+                        "points" : "`o}_BrridHw@?K@I?M?OAKAMAQCMEOEMEKEKEGEEAGG]QcCuAICGEGGQMKKSSQYGMIQKWSs@o@eBSk@GOIMcBcFIWGKOQ"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8848117,
+                        "lng" : -48.0594609
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "3.3 km",
+                        "value" : 3319
+                     },
+                     "duration" : 
+                     {
+                        "text" : "3 mins",
+                        "value" : 191
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8763509,
+                        "lng" : -48.0266592
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eBR-251\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "`w|_BdyhdHISIWWi@MSk@gAk@_A]k@S]_@m@w@uA{@wA{B{DU_@_AaB{@yAqAyBcBqCOUu@uAMSQYIOk@_AGKaAcBeByCOUIOg@y@KSMWWi@Ys@GUGQEMg@sBESESCSCQEWCUEk@AGAWCWAWAi@AW?U?E?O?S@k@@U@U@S@UBUJwAFs@XwDTiCD]?KDi@FaAFaAFq@B[B]JoAFq@Ds@XoDZaE@U^uEh@qGHiAZuE@KXqDR_C@YFu@RmCDe@Dy@LcB@QBQ?C@OBS@SHw@HkA"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8809653,
+                        "lng" : -48.0553926
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.7 km",
+                        "value" : 703
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 46
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8773001,
+                        "lng" : -48.0201566
+                     },
+                     "html_instructions" : "Continue straight onto \u003cb\u003eEstr. Parque Núcleo Bandeirante\u003c/b\u003e",
+                     "maneuver" : "straight",
+                     "polyline" : 
+                     {
+                        "points" : "dz{_BrecdHF_AFm@PoCFo@Z_EX{CDi@B]F_AReCF_AB_@XqDBULsA"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8763509,
+                        "lng" : -48.0266592
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.3 km",
+                        "value" : 257
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 46
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8793882,
+                        "lng" : -48.0191977
+                     },
+                     "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eRiacho Fundo I Qn 5\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Qn 7\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinue to follow Riacho Fundo I Qn 5\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : 
+                     {
+                        "points" : "b`|_B~|adHNMFGHEVI\\KfA_@REJCJ?FAD?D?VGHCLEBAFENOHEHGLEVIz@Y"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8773001,
+                        "lng" : -48.0201566
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "81 m",
+                        "value" : 81
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 16
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8800656,
+                        "lng" : -48.0189128
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eRiacho Fundo I Qn 7 Conjunto 6\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Qn 7 Qn 5 Conjunto 7\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "dm|_B~vadHn@UvAc@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8793882,
+                        "lng" : -48.0191977
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 240
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 44
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8820617,
+                        "lng" : -48.01806
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eRiacho Fundo I Qn 7 Conjunto 4 7\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Qn 7 Qn 5 Conjunto 3 4\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinue to follow Riacho Fundo I Qn 7 Qn 5 Conjunto 3 4\u003c/div\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "lq|_BduadHr@URGd@QfBi@@AXI^Mj@Q^MHEd@O"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8800656,
+                        "lng" : -48.0189128
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "74 m",
+                        "value" : 74
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 15
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8826774,
+                        "lng" : -48.0177972
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eRiacho Fundo I Qn 7 Qn 5 Conjunto 1\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Qn 7 Qn 5 Conjunto 2 3\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "z}|_BzoadH`@MXK^K^M"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8820617,
+                        "lng" : -48.01806
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "69 m",
+                        "value" : 69
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 14
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8832548,
+                        "lng" : -48.0175648
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eRiacho Fundo I Cln 7 Bl A\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Cln 7 Qn 5 Cln 5 Bl\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "va}_BfnadH@An@SJCNGRGNE"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8826774,
+                        "lng" : -48.0177972
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "6 m",
+                        "value" : 6
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 1
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8833021,
+                        "lng" : -48.017552
+                     },
+                     "html_instructions" : "Enter the roundabout",
+                     "polyline" : 
+                     {
+                        "points" : "he}_BvladH@@@?@A@?@??A"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8832548,
+                        "lng" : -48.0175648
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : 
+               {
+                  "text" : "20.9 km",
+                  "value" : 20877
+               },
+               "duration" : 
+               {
+                  "text" : "24 mins",
+                  "value" : 1449
+               },
+               "end_address" : "Brasília, Brasilia - Federal District, Brazil",
+               "end_location" : 
+               {
+                  "lat" : -15.7946528,
+                  "lng" : -47.8825555
+               },
+               "start_address" : "Riacho Fundo I, Brasília - DF, Brazil",
+               "start_location" : 
+               {
+                  "lat" : -15.8833021,
+                  "lng" : -48.017552
+               },
+               "steps" : 
+               [
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.1 km",
+                        "value" : 120
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 22
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.884093,
+                        "lng" : -48.0171066
+                     },
+                     "html_instructions" : "Head \u003cb\u003esoutheast\u003c/b\u003e toward \u003cb\u003eRiacho Fundo I Qs 6 Ac 3 Conjunto 3\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "re}_BtladHTIVKvAc@TEJC?A@??A@??A@??A?A?A?A?AA??A?AA??AA?A?A?A?A?A@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8833021,
+                        "lng" : -48.017552
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.8 km",
+                        "value" : 756
+                     },
+                     "duration" : 
+                     {
+                        "text" : "2 mins",
+                        "value" : 127
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8815282,
+                        "lng" : -48.0105701
+                     },
+                     "html_instructions" : "Exit the roundabout onto \u003cb\u003eQ. AC 2\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Cls 4 Ac 3 Bl A B\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinue to follow Q. AC 2\u003c/div\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "pj}_B|iadHK_@Sw@EKe@}AUw@i@cBMc@Mc@u@aCCKI[K[CMEMY}@w@mCe@{AMe@ACMc@Og@Oi@Sm@Qo@Qk@IYA??AAC?C?CAC?C?E?C?C?C"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.884093,
+                        "lng" : -48.0171066
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "42 m",
+                        "value" : 42
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 6
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8819012,
+                        "lng" : -48.0105063
+                     },
+                     "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eQ. AC 1\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Qs 2\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : 
+                     {
+                        "points" : "pz|_B`a`dHn@CJALE"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8815282,
+                        "lng" : -48.0105701
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 182
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 20
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8804995,
+                        "lng" : -48.0104303
+                     },
+                     "html_instructions" : "Make a \u003cb\u003eU-turn\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinue to follow Q. AC 1\u003c/div\u003e",
+                     "maneuver" : "uturn-left",
+                     "polyline" : 
+                     {
+                        "points" : "z||_Bt``dHFK@A?C?CAC?CAAIKm@FO?_@BkAFiBF"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8819012,
+                        "lng" : -48.0105063
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 236
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 34
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8784256,
+                        "lng" : -48.0103841
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eRiacho Fundo I Qn 1\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRiacho Fundo I Qn 3\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "bt|_Bd``dHU@K@[Bk@BqAFaAD_@@M@K?G@IAKASGMEe@W"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8804995,
+                        "lng" : -48.0104303
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "5.9 km",
+                        "value" : 5858
+                     },
+                     "duration" : 
+                     {
+                        "text" : "6 mins",
+                        "value" : 340
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.863293,
+                        "lng" : -47.9590231
+                     },
+                     "html_instructions" : "At the roundabout, take the \u003cb\u003e1st\u003c/b\u003e exit onto \u003cb\u003eEstr. Parque Núcleo Bandeirante\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : 
+                     {
+                        "points" : "dg|_Bz_`dHSa@Ga@EQAKAIC[MgCO{DCk@?IK_BQoFKqCIcBCy@IyAOeDEoACk@SiF?MEgAAOAUOkDEq@Es@WoFAYImBG}AEaAAYSaGGeBe@_ME_AQeDCo@G}@GgBCyAGiBKcACo@KwCGoAIwBEuAG}AA[G_BEoAEy@C]Ea@Ea@Gg@Im@G_@Oy@_@_BQk@Mc@]cA_@_AQa@Qa@q@aBQa@O_@q@_Bs@eBOa@i@oASe@KWKWyDiJeF_Mw@uBSg@Wo@i@oA[s@a@eAQa@[u@mAuCO[Ws@M][u@GOO_@aB}DmAuCu@mBO_@c@cAc@eAa@cAm@{AGOwA_DO_@q@{A}@sACCKOUc@Uc@Yo@Yo@M[OYO_@O]c@iAk@wAQq@Qs@c@}Aq@cBoAcDsAcDYs@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8784256,
+                        "lng" : -48.0103841
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.6 km",
+                        "value" : 601
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 37
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8599475,
+                        "lng" : -47.9554858
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eBR-020\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "phy_Bz~ucHO[O]{AsDg@qAc@eAM[O_@O_@Yq@Ys@]u@MWSWWSWOYKa@GSC_@A[@M@O@MDKB}@X"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.863293,
+                        "lng" : -47.9590231
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.4 km",
+                        "value" : 402
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 33
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8564388,
+                        "lng" : -47.95555160000001
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eBR-450\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "tsx_BxhucHKDMFUHg@P[L[JMDE@A?C@C?C@C?G@E?C?C?C?G?C?GAG?E?OCYCq@GcBMiAIo@EYCcBMSC"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8599475,
+                        "lng" : -47.9554858
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "1.0 km",
+                        "value" : 995
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 56
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8476037,
+                        "lng" : -47.9543433
+                     },
+                     "html_instructions" : "Slight \u003cb\u003eleft\u003c/b\u003e to merge onto \u003cb\u003eBR-450\u003c/b\u003e",
+                     "maneuver" : "ramp-left",
+                     "polyline" : 
+                     {
+                        "points" : "v}w_BdiucHIDK@S@S?q@@M?C?YDqBUaCSgAIs@GgAKsFe@q@IeAIwAMuCWeAKg@EoBQqBQwAMq@G_BO"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8564388,
+                        "lng" : -47.95555160000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.8 km",
+                        "value" : 850
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 51
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8419741,
+                        "lng" : -47.9505348
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eZoológico\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : 
+                     {
+                        "points" : "nfv_BraucH[QCAKEWISEOEEAA?WG_BQIAkCYeBMuE]q@Gs@EYWYKk@]]QWSQOEEAAKMQSOUUYKUO]GUIY?AGWEYC_@AQG_BAWAWCi@?A"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8476037,
+                        "lng" : -47.9543433
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "2.3 km",
+                        "value" : 2292
+                     },
+                     "duration" : 
+                     {
+                        "text" : "2 mins",
+                        "value" : 128
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8453024,
+                        "lng" : -47.9295966
+                     },
+                     "html_instructions" : "Take the ramp onto \u003cb\u003eEPGU\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "hcu_BxitcH?]AyA?U@[@W@UBY?AIWv@eD`AgFTeAVoADOTcAH[Lc@HWNe@Nc@L_@V_APw@Z}AFYhBuIX{ADYF_@NiAFo@JmAFeADy@D}@FuCJcD@e@DsADeBHmFXqJ?OLyDHmE?o@@q@HaFD{A"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8419741,
+                        "lng" : -47.9505348
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.7 km",
+                        "value" : 710
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 53
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8439936,
+                        "lng" : -47.9312183
+                     },
+                     "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto the ramp to \u003cb\u003eZona Central\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : 
+                     {
+                        "points" : "bxu_B~fpcHJI@CBC@GBQDKFKJIJILGNEJAPAJ@LBF@B@PHLJPXZl@h@jA^fAJ\\Nh@H\\?TARENGLGFA@KJMDODO@OAWBgNa@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8453024,
+                        "lng" : -47.9295966
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.1 km",
+                        "value" : 120
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 7
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8429261,
+                        "lng" : -47.9312617
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eAsa Sul\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eAsa Norte\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "|ou_BbqpcHmCAk@?MBKD"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8439936,
+                        "lng" : -47.9312183
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.5 km",
+                        "value" : 466
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 26
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8389121,
+                        "lng" : -47.9302422
+                     },
+                     "html_instructions" : "Merge onto \u003cb\u003eDF-047\u003c/b\u003e",
+                     "maneuver" : "merge",
+                     "polyline" : 
+                     {
+                        "points" : "hiu_BjqpcHgAC{@Am@CyBKmAK{AS{@QYIYI{@WSIw@]MEgAi@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8429261,
+                        "lng" : -47.9312617
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.1 km",
+                        "value" : 104
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 6
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.838279,
+                        "lng" : -47.9295288
+                     },
+                     "html_instructions" : "Take the exit toward \u003cb\u003eVia L2 Sul\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eVia L4 Sul\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : 
+                     {
+                        "points" : "dpt_B~jpcHIQEG_AaAm@q@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8389121,
+                        "lng" : -47.9302422
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.5 km",
+                        "value" : 469
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 28
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.835606,
+                        "lng" : -47.9261444
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eERL - Sul\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "flt_BpfpcHsA{Ai@k@}@eAY_@k@w@w@kAS[U]w@oAU_@W_@k@{@_@m@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.838279,
+                        "lng" : -47.9295288
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "93 m",
+                        "value" : 93
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 6
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8350962,
+                        "lng" : -47.92545029999999
+                     },
+                     "html_instructions" : "Take the ramp to \u003cb\u003eERL - Sul\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "p{s_BjqocHoAkBU]"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.835606,
+                        "lng" : -47.9261444
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.2 km",
+                        "value" : 221
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 14
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8343165,
+                        "lng" : -47.9235514
+                     },
+                     "html_instructions" : "Slight \u003cb\u003eright\u003c/b\u003e onto the ramp to \u003cb\u003eEixo L\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : 
+                     {
+                        "points" : "jxs_B`mocHQc@Ok@UaAGYIYOk@Oc@Qa@MYKUES"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8350962,
+                        "lng" : -47.92545029999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "5.5 km",
+                        "value" : 5525
+                     },
+                     "duration" : 
+                     {
+                        "text" : "6 mins",
+                        "value" : 369
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.8015652,
+                        "lng" : -47.8851761
+                     },
+                     "html_instructions" : "Continue onto \u003cb\u003eERL - Sul\u003c/b\u003e",
+                     "polyline" : 
+                     {
+                        "points" : "nss_BdaocHwAyBGKYc@e@u@MOEIGIGKu@iAGKkAiBqGyJgAaBU_@a@m@MSi@{@s@eAYc@w@oAIKGIMSS[k@}@AAMQ]k@s@cAEIoCiEc@o@wAyBU]QY]g@i@w@KQi@y@s@gAi@{@[g@]i@KOCCGKKOIO]g@]i@i@w@_A{Am@{@Wc@Ya@QYqAqBWe@e@o@U[OUIMIOQWU]kAiBy@oASYy@sAQUGKGIMSS[MSWa@}A_CkDkFgAcBW_@u@kA{AcCEGeA}AOUoAmBGKCEGKCCCECEc@o@c@o@wCiES[iCmDiAwAi@q@iAwAcCwCOSwAaBGGGGGGGIu@{@e@g@]_@iDsD_@_@UWw@w@mDgDWWcA_AoCeCQOMIeA_AKISQSQEEeA}@k@g@sC_CqAiAGG_@[USsC_CWSmA_AyB_B_BgAKGeAu@QIGGKGKGMIg@Yg@YKG]S_@UkBaAe@WaAi@i@Y"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8343165,
+                        "lng" : -47.9235514
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.4 km",
+                        "value" : 425
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 45
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.7980862,
+                        "lng" : -47.8835503
+                     },
+                     "html_instructions" : "Continue straight onto \u003cb\u003eEixo L Sul\u003c/b\u003e",
+                     "maneuver" : "straight",
+                     "polyline" : 
+                     {
+                        "points" : "xfm_BjqgcH[Qa@OQKSIcAa@MIGCCAsAe@w@[qAe@SGa@KUEUGw@WOEYKsAg@"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.8015652,
+                        "lng" : -47.8851761
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "0.4 km",
+                        "value" : 379
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 29
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.7948745,
+                        "lng" : -47.8823783
+                     },
+                     "html_instructions" : "Continue straight onto \u003cb\u003eEixo L\u003c/b\u003e",
+                     "maneuver" : "straight",
+                     "polyline" : 
+                     {
+                        "points" : "`ql_BdggcHuC}@YIWICAEAqA]wA]y@QSGKCyBi@SEQEMC"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.7980862,
+                        "lng" : -47.8835503
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : 
+                     {
+                        "text" : "31 m",
+                        "value" : 31
+                     },
+                     "duration" : 
+                     {
+                        "text" : "1 min",
+                        "value" : 12
+                     },
+                     "end_location" : 
+                     {
+                        "lat" : -15.7946528,
+                        "lng" : -47.8825555
+                     },
+                     "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : 
+                     {
+                        "points" : "||k_Bz_gcHWRSN"
+                     },
+                     "start_location" : 
+                     {
+                        "lat" : -15.7948745,
+                        "lng" : -47.8823783
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : 
+         {
+            "points" : "tpv`BvgkdHSGMO]s@kBaF}EyLsCcHyBmF_AcCu@sBw@yAk@[O?s@AcPY{c@w@qA[s@Y}A_A{CgBg@]WYU_@oAoD_G{OuAuDgAwB]a@eAeBg@o@oAiBuBoDgC_DmD{DW[yD_EoAeAsA}@oAuA{G_IgPqRmV}XmVeYyVoYoQySeLwMyBeCWo@Q]a@cAWaAa@aDU_BSm@Q_@W[w@m@q@Ue@Io@Eo@Cc@Dy@Ry@h@c@f@Wl@Ol@Gt@AhAMhAOj@a@p@mAnAKVmDtCoPxMkXpTsy@xp@sEjDuDhCmCbBqElCgFhCaEjBwFzBkEzA_GfBgGzAiDt@gDr@eJnBiQ~DwQ~Dmc@pJua@dJij@zL{HdBoTtEuMlCkKbCmXfG}FtAcFdAoEbAkOfDgNzC_Dn@gDz@w@?U@]Ay@Mu@Ws@a@}CgB]Ye@m@q@kBuAoDmB{FW]y@iByKiR{KgRqGyKyAoCo@iBw@oDSkBMmDBeBHuAvAcRjAsOfB_U`A}MlAsPf@qG|@mLj@cHx@wKPiBVUfC{@r@Kl@Kh@]`@SzE}A|HeClEyApBk@BABAl@UlBi@JE@?BEAGEEE?_Owf@Aa@z@ETQ?MAEIKm@Fo@BuDNiBJaEPi@Aa@Me@WSa@Ms@CUe@kKi@kNg@}Kw@mSe@oJYgHgAgZe@{JKcEOsBc@uLWiHU{Ci@oDq@kCk@gBuBeFsAaDyPwa@yFoNcCcGuCcHsH}QgB_Eq@{A}@sAOSk@gAqAuCoB_Fc@eBc@}Aq@cBcDgIi@oAwDiJgAmCw@iBa@o@o@c@{@Ss@Ei@B]FiA\\wAh@kA`@c@Dy@E{L_AUFg@@_A@]DoJ{@sLeAgUqB_BO[QOGaAWcC[qFg@gGe@s@EYWeAi@mA{@o@y@a@o@Ws@WmAOiDEaB@cDDo@IYv@eD`AgFl@uCr@sCv@aClAoFbCqLLy@VyBRsC^qLVmMp@iWP_LRYH]RUXQZGr@DTJ^d@dAxBj@dBXfAAh@M\\IHYP_@Fg@@gNa@mCAy@BKDgACiBEgEWwCe@s@SuCeAgAi@IQeAiAiF_GqC_EmHaLa@oA]{AYeAa@eAYo@ESwAyBa@o@s@eAkAiBmLqQ_GcJyPqWoMcSiOuUaUm]sCkEyIcMaIyJcF{F}FkGaIwHoHsGuKgJkDsCgE_DcEoCgDqBsFyCyBgAmBy@aFiBaBa@uDqAkEsAiFoAmD{@_@Ik@b@"
+         },
+         "summary" : "BR-251",
+         "warnings" : [],
+         "waypoint_order" : 
+         [
+            0
+         ]
+      }
+   ],
+   "status" : "OK"
+}

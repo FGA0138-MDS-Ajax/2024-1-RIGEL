@@ -1,0 +1,25 @@
+{
+   "geocoded_waypoints" : 
+   [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJI0m4cDXUW5MRc_tKsHj1GDE",
+         "types" : 
+         [
+            "administrative_area_level_4",
+            "political"
+         ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJLUnNMUtfq48RYAlKoecR3dk",
+         "types" : 
+         [
+            "establishment",
+            "natural_feature"
+         ]
+      }
+   ],
+   "routes" : [],
+   "status" : "ZERO_RESULTS"
+}
