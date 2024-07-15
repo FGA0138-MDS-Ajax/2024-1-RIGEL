@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Equipe
 
-## A equipe de desenvolvimento de software RIGEL:
+## A equipe de desenvolvimento de software <span style={{color: '#fcba03'}}>RIGEL</span>:
 
 ###
 <div align="center">
